@@ -73,7 +73,7 @@ export default function Home() {
       </nav>
 
   <section ref={heroRef} className="w-full flex flex-col items-center mt-10 sm:mt-16 mb-8 sm:mb-10 px-1">
-        <h1 className="text-white text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 tracking-tight text-center drop-shadow-lg uppercase mystery-quest-regular">Ressurgence</h1>
+        <h1 className="text-white text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold mb-2 tracking-tight text-center  uppercase mystery-quest-regular">Ressurgence</h1>
         <h4 className="text-white text-lg xs:text-xl md:text-3xl font-semibold mb-4 sm:mb-6 text-center drop-shadow mystery-quest-regular">The Ultimate Mini Militia Handbook</h4>
         <p className="text-white/80 max-w-xs xs:max-w-md sm:max-w-2xl text-center mb-6 sm:mb-8 text-base xs:text-lg md:text-xl">understand the whole weaponary from this simple site</p>
       </section>
@@ -93,15 +93,13 @@ export default function Home() {
         </button>
       </div>
 
-  <section className="w-full max-w-5xl mt-35">
+  <section className="w-full  mt-16">
         {tab === 'weapons' ? (
           <>
             <h2 className="text-yellow-400 text-3xl font-bold mb-8 mystery-quest-regular text-center tracking-wider drop-shadow">All Weapons</h2>
             <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 w-full">
-              {weapons.map((weapon, idx) => (
+              {weapons.map((weapon) => (
                 <div
-                  key={"weapon-" + idx}
-                  ref={el => { cardsRef.current[idx] = el; }}
                   className="bg-black/60 rounded-2xl p-2 xs:p-3 sm:p-4 flex flex-col items-center border border-yellow-400/20 shadow-lg hover:scale-105 transition-transform duration-200 w-full"
                 >
                   <Image src={weapon.image || "/mininmiltia.webp"} alt={weapon.name} width={100} height={100} className="rounded-xl mb-2 xs:mb-3 border-4 border-yellow-400/60" />
@@ -119,10 +117,8 @@ export default function Home() {
           <>
             <h2 className="text-yellow-400 text-3xl font-bold mb-8 mystery-quest-regular text-center tracking-wider drop-shadow">All Thrown Weapons</h2>
             <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 w-full">
-              {thrownWeapons.map((weapon, idx) => (
+              {thrownWeapons.map((weapon) => (
                 <div
-                  key={"thrown-" + idx}
-                  ref={el => { cardsRef.current[idx] = el; }}
                   className="bg-black/60 rounded-2xl p-2 xs:p-3 sm:p-4 flex flex-col items-center border border-yellow-400/20 shadow-lg hover:scale-105 transition-transform duration-200 w-full"
                 >
                   <Image src={weapon.image || "/mininmiltia.webp"} alt={weapon.name} width={100} height={100} className="rounded-xl mb-2 xs:mb-3 border-4 border-yellow-400/60" />
